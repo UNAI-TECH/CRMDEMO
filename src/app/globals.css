@@ -1,38 +1,36 @@
 @import "tailwindcss";
 
-/* ========================================
-   AUTO BOURN 2.0 — Pure White Luxury Design System
-   ======================================== */
+@theme {
+  --font-sans: var(--font-secondary-google), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-primary-google), 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body, button, input, select, textarea {
+  font-family: var(--font-secondary-google), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
 :root {
-  /* Brand Colors */
-  --brand-red: #E10613;
-  --brand-red-hover: #C70511;
-  --brand-red-light: rgba(225, 6, 19, 0.08);
-  --brand-red-glow: rgba(225, 6, 19, 0.15);
+  /* Brand Design System — Auto Bourn Dealership CRM */
+  --brand-red: #F20D18;
+  --brand-red-hover: #D90812;
+  --brand-red-light: rgba(242, 13, 24, 0.08);
+  --brand-red-glow: rgba(242, 13, 24, 0.15);
 
-  /* White System */
-  --white: #FFFFFF;
-  --off-white: #FAFAFA;
-  --luxury-silver: #F5F5F5;
-  --platinum: #ECECEC;
-  --platinum-gray: #DADADA;
+  /* Surface & Text */
+  --text-primary: #252525;
+  --text-secondary: #7C8493;
+  --bg-main: #F7F5F1;
+  --bg-card: #FFFFFF;
+  --border-color: #E9ECF1;
 
-  /* Text */
-  --graphite: #2A2A2A;
-  --graphite-light: #4A4A4A;
-  --graphite-muted: #8A8A8A;
-  --graphite-subtle: #B0B0B0;
-
-  /* Glass */
-  --glass-white: rgba(255, 255, 255, 0.80);
-  --glass-white-strong: rgba(255, 255, 255, 0.92);
-  --glass-border: rgba(236, 236, 236, 0.6);
-  --glass-search: rgba(255, 255, 255, 0.85);
+  /* Semantic Status Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 10px rgba(0, 0, 0, 0.03);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.08);
   --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.10);
   --shadow-red: 0 8px 30px rgba(225, 6, 19, 0.20);

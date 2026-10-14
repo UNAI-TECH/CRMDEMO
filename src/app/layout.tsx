@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} light`}>
-      <body className="min-h-screen bg-[#F8F9FA] text-[#1A1A1A] font-sans antialiased selection:bg-[#E10613] selection:text-white">
+      <body className="min-h-screen bg-[#F7F5F1] text-[#252525] font-sans antialiased selection:bg-[#F20D18] selection:text-white">
         <StyledJsxRegistry>
           {children}
         </StyledJsxRegistry>

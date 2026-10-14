@@ -39,7 +39,7 @@ export default function BookingsManagementPage() {
   const totalRevenue = bookings.reduce((sum, b) => sum + (b.total_amount || 0), 0);
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto w-full">
+    <div className="p-6 sm:p-8 max-w-[1360px] mx-auto w-full">
         {/* Module Header */}
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold mb-2">

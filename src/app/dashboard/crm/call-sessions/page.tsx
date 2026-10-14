@@ -44,15 +44,15 @@ export default function CallSessionsPage() {
   };
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto w-full">
+    <div className="p-6 sm:p-8 max-w-[1360px] mx-auto w-full">
       {/* Header */}
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-[#E10613] text-xs font-bold mb-2">
           <PhoneCall className="w-3.5 h-3.5" />
           <span>High-Touch Outreach Console</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-          Call Sessions
+        <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
+          Call Scheduler
         </h1>
         <p className="text-xs sm:text-sm text-gray-500 mt-1 font-medium">
           Rapid outbound calling desk with instant WhatsApp trigger and automated CRM activity logging.

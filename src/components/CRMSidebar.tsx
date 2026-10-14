@@ -1,12 +1,12 @@
-// src/components/CRMSidebar.tsx — Spacious, Clean Luxury White & Red Sidebar
+// src/components/CRMSidebar.tsx — Auto Bourn Dealership CRM Unified Sidebar
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  CalendarClock, Activity, User, Users, CalendarCheck,
-  PhoneCall, FileText, BarChart2, LogOut, ChevronRight, Car
+  Home, Users, CalendarCheck, Headphones,
+  FileText, BarChart2, ChevronRight, Car
 } from 'lucide-react';
 
 interface CRMSidebarProps {
@@ -23,24 +23,11 @@ export default function CRMSidebar({ onCloseMobile }: CRMSidebarProps) {
     return pathname.startsWith(href);
   };
 
-  const topMenuItems = [
-    {
-      label: 'Test Drives',
-      href: '/dashboard/crm/test-drives',
-      icon: CalendarClock,
-    },
-    {
-      label: 'Activity Logs',
-      href: '/dashboard/crm/activity-logs',
-      icon: Activity,
-    },
-  ];
-
-  const crmMenuItems = [
+  const navItems = [
     {
       label: 'CRM Overview',
       href: '/dashboard/crm',
-      icon: User,
+      icon: Home,
     },
     {
       label: 'Leads',
@@ -53,9 +40,9 @@ export default function CRMSidebar({ onCloseMobile }: CRMSidebarProps) {
       icon: CalendarCheck,
     },
     {
-      label: 'Call Sessions',
+      label: 'Call Scheduler',
       href: '/dashboard/crm/call-sessions',
-      icon: PhoneCall,
+      icon: Headphones,
     },
     {
       label: 'Customer Details',
@@ -70,27 +57,35 @@ export default function CRMSidebar({ onCloseMobile }: CRMSidebarProps) {
   ];
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-100 flex flex-col justify-between h-full select-none shadow-[1px_0_10px_rgba(0,0,0,0.01)]">
+    <aside
+      className="w-[215px] min-w-[215px] max-w-[215px] bg-white border-r border-[#E9ECF1] flex flex-col justify-between h-full select-none shadow-[1px_0_6px_rgba(0,0,0,0.02)]"
+      style={{
+        width: '215px',
+        minWidth: '215px',
+        maxWidth: '215px',
+        backgroundColor: '#FFFFFF',
+        borderRight: '1px solid #E9ECF1',
+      }}
+    >
       {/* Top Header Logo */}
       <div>
-        <div className="h-20 px-6 flex items-center gap-3.5 border-b border-gray-50">
-          <div className="w-9 h-9 rounded-xl bg-[#E10613] flex items-center justify-center text-white shadow-md shadow-red-500/20">
-            <Car className="w-5 h-5" />
+        <div className="h-16 px-4 flex items-center gap-2.5 border-b border-[#E9ECF1]/80">
+          <div className="w-8 h-8 rounded-full bg-[#F20D18] flex items-center justify-center text-white shadow-sm shadow-red-500/20 flex-shrink-0">
+            <Car className="w-4 h-4" />
           </div>
-          <div className="flex flex-col">
-            <span className="text-base font-black tracking-wider text-[#E10613] leading-tight">
+          <div className="flex flex-col min-w-0">
+            <span className="text-[13px] font-black tracking-wide text-[#F20D18] leading-tight truncate">
               AUTO BOURN
             </span>
-            <span className="text-[10px] font-bold text-gray-400 tracking-wider uppercase">
-              Dealership CRM
+            <span className="text-[9px] font-bold text-[#7C8493] tracking-wider uppercase truncate">
+              DEALERSHIP CRM
             </span>
           </div>
         </div>
 
-        {/* Navigation Section */}
-        <div className="py-6 px-4 space-y-1.5">
-          {/* Top Quick Links */}
-          {topMenuItems.map((item) => {
+        {/* Navigation Links */}
+        <div className="py-5 px-2.5 space-y-1">
+          {navItems.map((item) => {
             const active = isLinkActive(item.href);
             const Icon = item.icon;
             return (
@@ -98,62 +93,71 @@ export default function CRMSidebar({ onCloseMobile }: CRMSidebarProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onCloseMobile}
-                className={`flex items-center justify-between px-4 py-3 rounded-2xl text-[13px] font-bold transition-all ${
+                style={{
+                  backgroundColor: active ? '#FFF0F0' : 'transparent',
+                  color: active ? '#F20D18' : '#7C8493',
+                  borderRadius: '10px',
+                  padding: '9px 12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  fontWeight: active ? '700' : '500',
+                  fontSize: '12px',
+                  transition: 'all 0.15s ease',
+                }}
+                className={`flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs transition-all ${
                   active
-                    ? 'bg-red-50/90 text-[#E10613] shadow-xs'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    ? 'bg-[#FFF0F0] text-[#F20D18] font-bold'
+                    : 'text-[#7C8493] hover:text-[#252525] hover:bg-[#F7F5F1] font-medium'
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <Icon className={`w-4 h-4 ${active ? 'text-[#E10613]' : 'text-gray-400'}`} />
-                  <span>{item.label}</span>
-                </div>
-                {active && <ChevronRight className="w-4 h-4 text-[#E10613]" />}
-              </Link>
-            );
-          })}
-
-          {/* CRM Section Category Header */}
-          <div className="pt-6 pb-2 px-4">
-            <span className="text-[11px] font-extrabold text-gray-400 tracking-wider uppercase block">
-              CRM Operations
-            </span>
-          </div>
-
-          {/* CRM Sub-Links */}
-          {crmMenuItems.map((item) => {
-            const active = isLinkActive(item.href);
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={onCloseMobile}
-                className={`flex items-center justify-between px-4 py-3 rounded-2xl text-[13px] font-bold transition-all ${
-                  active
-                    ? 'bg-red-50/90 text-[#E10613] shadow-xs'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <Icon className={`w-4 h-4 ${active ? 'text-[#E10613]' : 'text-gray-400'}`} />
-                  <span>{item.label}</span>
-                </div>
-                {active && <ChevronRight className="w-4 h-4 text-[#E10613]" />}
+                <Icon
+                  className="w-4 h-4 flex-shrink-0"
+                  style={{
+                    width: '16px',
+                    height: '16px',
+                    color: active ? '#F20D18' : '#7C8493',
+                  }}
+                />
+                <span className="truncate">{item.label}</span>
               </Link>
             );
           })}
         </div>
       </div>
 
-      {/* Bottom Sign Out */}
-      <div className="p-4 border-t border-gray-100">
+      {/* Bottom User Profile Section */}
+      <div className="p-3.5 border-t border-[#E9ECF1]">
+        <div className="flex items-center gap-1.5 mb-2 px-1">
+          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+          <span className="text-[10px] font-bold text-[#7C8493]">Online</span>
+        </div>
+
         <Link
-          href="/"
-          className="flex items-center gap-3 px-4 py-3 rounded-2xl text-[13px] font-bold text-gray-500 hover:text-[#E10613] hover:bg-red-50/50 transition-all"
+          href="/dashboard/crm"
+          className="flex items-center justify-between p-1.5 rounded-xl hover:bg-[#F7F5F1] transition-colors group"
         >
-          <LogOut className="w-4 h-4 text-gray-400" />
-          <span>Sign Out</span>
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold ring-1 ring-[#E9ECF1] overflow-hidden flex-shrink-0">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                alt="Alex Johnson"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLElement).style.display = 'none';
+                }}
+              />
+            </div>
+            <div className="flex flex-col text-left truncate">
+              <span className="text-xs font-bold text-[#252525] leading-tight truncate">
+                Alex Johnson
+              </span>
+              <span className="text-[10px] text-[#7C8493] font-medium truncate">
+                Sales Manager
+              </span>
+            </div>
+          </div>
+          <ChevronRight className="w-3.5 h-3.5 text-[#7C8493] group-hover:text-[#252525] transition-colors flex-shrink-0" />
         </Link>
       </div>
     </aside>

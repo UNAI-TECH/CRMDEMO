@@ -68,7 +68,7 @@ export default function TestDrivesPage() {
   };
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto w-full">
+    <div className="p-6 sm:p-8 max-w-[1360px] mx-auto w-full">
         {/* Module Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           <div>

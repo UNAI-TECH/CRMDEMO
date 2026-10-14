@@ -107,15 +107,15 @@ export default function AnalyticsDashboardPage() {
     .sort((a, b) => b.closedRevenue - a.closedRevenue);
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto w-full">
+    <div className="p-6 sm:p-8 max-w-[1360px] mx-auto w-full">
         {/* Module Header */}
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-[#E10613] text-xs font-bold mb-2">
             <TrendingUp className="w-3.5 h-3.5" />
-            <span>Module 7: Executive Intelligence & Performance Leaderboard</span>
+            <span>Executive Intelligence & Performance Leaderboard</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-            Sales Funnel, Conversion Velocity & Leaderboard
+            CRM Analytics & Performance
           </h1>
           <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
             Real-time dealership conversion rates, average deal cycle duration, channel ROI, and sales rep leaderboard.

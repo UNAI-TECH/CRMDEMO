@@ -189,9 +189,9 @@ export default function LeadsPipelinePage() {
     }
   };
   return (
-    <div className="p-6 sm:p-8 max-w-[1720px] mx-auto w-full flex flex-col">
+    <div className="p-6 sm:p-8 max-w-[1360px] mx-auto w-full flex flex-col">
         {/* Top Control Bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 bg-white p-4 sm:p-5 rounded-2xl border border-gray-200/90 shadow-xs">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
           <div>
             <div className="flex items-center gap-2.5">
               <h1 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">Sales Pipeline</h1>
